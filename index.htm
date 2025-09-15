@@ -1,14 +1,179 @@
 <!DOCTYPE html>
-<html lang= "en">
-   <head>
-     <meta charset="UTF-8">
-       <meta http-equiv="X-UA-Compatible" content-"IE-edge">
-       <meta name="viewport" content="width-device-width, initial-scale-1.0">
-       <title>My personal brand</title>
-   </head>
-   <body>
-     Welcome to my personal brand website.
-     <br /> 
-     Marketing Strategist & Coordinator passionate about blending creativity with tech. Skilled in social media, branding, and web design, now expanding into IT support & project management.
-   </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to my personal brand</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink:#ff4fa3;
+      --pink-600:#e23e8f;
+      --yellow:#ffd34d;
+      --ink:#1f1f27;
+      --muted:#666a77;
+      --bg: #fff7fb;
+      --card:#ffffff;
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(31,31,39,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 800px at -10% -10%, rgba(255,211,77,0.25), transparent 60%),
+        radial-gradient(1000px 700px at 110% 20%, rgba(255,79,163,0.18), transparent 60%),
+        var(--bg);
+      display:grid;
+      place-items:center;
+      padding:48px 20px;
+    }
+
+    .shell{
+      width:min(920px, 100%);
+    }
+
+    .hero{
+      background:linear-gradient(135deg, var(--pink) 0%, var(--yellow) 100%);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 2.2rem;
+      color:#121212;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(300px 140px at 20% 20%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(260px 120px at 80% 40%, rgba(255,255,255,0.35), transparent 60%);
+      pointer-events:none;
+      mix-blend: screen;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#fff;
+      color:var(--pink-600);
+      font-weight:700;
+      letter-spacing:.4px;
+      padding:.45rem .8rem;
+      border-radius:999px;
+      box-shadow: var(--shadow);
+    }
+
+    h1{
+      margin: .9rem 0 .3rem;
+      font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+      line-height:1.15;
+      color:#111016;
+    }
+
+    p.lead{
+      margin:.25rem 0 0;
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+      color:#22222a;
+      max-width: 65ch;
+    }
+
+    .card{
+      margin-top:18px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:1.25rem 1.2rem;
+      border:1px solid rgba(31,31,39,0.06);
+    }
+
+    .kicker{
+      color:var(--muted);
+      font-size:.95rem;
+      margin:0 0 .4rem;
+    }
+
+    ul{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap:.6rem .8rem;
+      padding-left:1.1rem;
+      margin:.4rem 0 0;
+    }
+
+    .cta{
+      margin-top:1rem;
+      display:flex; gap:.6rem; flex-wrap:wrap;
+    }
+
+    .btn{
+      appearance:none; border:0; cursor:pointer;
+      padding:.75rem 1rem; border-radius:12px;
+      font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+      transition: transform .08s ease, box-shadow .12s ease, background .2s ease;
+    }
+    .btn-primary{
+      background:#111016; color:#fff;
+      box-shadow: 0 6px 18px rgba(17,16,22,.12);
+    }
+    .btn-primary:hover{ transform: translateY(-1px) }
+    .btn-ghost{
+      background:#fff; color:#111016; border:1px solid rgba(0,0,0,.08);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      box-shadow:0 0 0 3px rgba(255,79,163,.15);
+    }
+
+    footer{
+      margin-top:14px;
+      font-size:.9rem; color:var(--muted);
+      text-align:center;
+    }
+    a{color:inherit}
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <section class="hero">
+      <span class="tag">Hello, I’m Florine</span>
+      <h1>Marketing Strategist & Coordinator</h1>
+      <p class="lead">
+        I blend creativity with tech to craft clear, human-centered marketing. Skilled in social media, branding, and web design — now expanding into IT support & project management.
+      </p>
+
+      <div class="card">
+        <p class="kicker">Focus areas</p>
+        <ul>
+          <li>Content & brand strategy</li>
+          <li>Social media + analytics</li>
+          <li>Web design & UX basics</li>
+          <li>Project coordination</li>
+        </ul>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="#" aria-label="View portfolio">
+            <span class="dot"></span> View portfolio
+          </a>
+          <a class="btn btn-ghost" href="#" aria-label="Contact Florine">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Florine — Just a newbie learning git </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
